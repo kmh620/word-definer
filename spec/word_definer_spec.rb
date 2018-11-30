@@ -31,20 +31,14 @@ describe("Word") do
     end
   end
 
-  describe('.add_define') do
-    it('Add definition to word') do
-      word = Word.new({:word => "Spinach", :definition => "Leafy green vegetable"})
+  describe('#id') do
+    it("Adds 1 to id with each new word added") do
+      word = Word.new({:word => "tall"})
       word.save()
-      expect(word.add_define()).to(eq("Leafy green vegetable"))
+      word2 = Word.new({:word => "green"})
+      word2.save()
+      expect(word.id()).to(eq(1))
+      expect(word2.id()).to(eq(2))
     end
-  end
-
-end
-
-
-describe('case_word') do
-  it('Will capitalize first letter of input word, adjust for different capitalizations') do
-    word = Word.new({:word => "sPinaCH"})
-    expect(word.case_word()).to(eq("Spinach"))
   end
 end

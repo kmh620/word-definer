@@ -8,9 +8,8 @@
 # describe('Adding a word', {:type => :feature}) do
 #   it('User adds word to dictionary') do
 #     visit('/')
-#     fill_in('input_word', :with => 'table')
+#     fill_in('input-word', :with => 'table')
 #     click_button('Add')
-#     save_and_open_page
-#     expect(page).to have_content("table")
+#     expect(page).to have_content("Table")
 #   end
 # end
