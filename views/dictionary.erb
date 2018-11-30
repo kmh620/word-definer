@@ -2,15 +2,15 @@
 
 <p>Click on a word to view/ add a definition</p>
 
-<% @dictionary.each do |word| %>
-  <h3 font= "bold"><%= word %></h3>
+<% @dictionary.each do |new_word| %>
+  <a href="<%= new_word.id() %>"><%= new_word.word() %></a>
 <% end %>
 
 
-<form action="/add" method="post">
+<form action="/add_word" method="post">
   <div class="form-group">
-    <label for="input_word">Add a word to the dictionary:</label>
-    <input id="input_word" name="input_word" class="form-control" type="text">
+    <label for="input-word">Add a word to the dictionary:</label>
+    <input id="input-word" name="input-word" class="form-control" type="text">
   </div>
   <button type="submit" class="btn btn-default">Add</button>
 </form>

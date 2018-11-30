@@ -8,12 +8,20 @@ get('/') do
   erb(:dictionary)
 end
 
-post ('/add') do
-  word_name = params.fetch["input_word"]
-  new_word = Word.new(word_name)
-  new_word.save()
-  dictionary_list = []
+get('/add_word') do
+  erb(:dictionary)
+end
 
-  @dictionary =Word.all()
-  erb(:layout)
+post ('/add_word') do
+  @word_name = params.fetch("input-word")
+  new_word = Word.new({:word => @word_name})
+  new_word.save()
+   # Contact.add_contact(new_contact)
+  # dictionary_list = []
+  #
+  # dictionary_list = Word.all_words
+
+
+  @dictionary = Word.all()
+  erb(:dictionary)
 end
