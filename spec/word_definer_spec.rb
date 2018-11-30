@@ -4,6 +4,10 @@
   require ('word.rb')
 
 describe("Word") do
+  before() do
+    Word.clear()
+    end
+
   describe('.all') do
     it('Shows list array empty') do
       expect(Word.all()).to(eq([]))
@@ -15,6 +19,15 @@ describe("Word") do
       word = Word.new("water")
       word.save()
       expect(Word.all()).to(eq([word]))
+    end
+  end
+
+  describe('.clear') do
+    it('Clears all words from list') do
+      word = Word.new("tree")
+      word.save()
+      Word.clear()
+      expect(Word.all()).to(eq([]))
     end
   end
 end
