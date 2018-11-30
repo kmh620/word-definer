@@ -30,7 +30,17 @@ describe("Word") do
       expect(Word.all()).to(eq([]))
     end
   end
+
+  describe('.add_define') do
+    it('Add definition to word') do
+      word = Word.new({:word => "Spinach", :definition => "Leafy green vegetable"})
+      word.save()
+      expect(word.add_define()).to(eq("Leafy green vegetable"))
+    end
+  end
+
 end
+
 
 describe('case_word') do
   it('Will capitalize first letter of input word, adjust for different capitalizations') do
