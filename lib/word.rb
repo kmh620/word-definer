@@ -24,4 +24,12 @@ class Word
    @@dictionary.push(self)
   end
 
+  def self.find(id)
+  word_id = id.to_i()
+   @@dictionary.each do |word|
+     if word.id == word_id
+       return word
+     end
+   end
+ end
 end

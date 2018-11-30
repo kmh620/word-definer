@@ -41,4 +41,15 @@ describe("Word") do
       expect(word2.id()).to(eq(2))
     end
   end
+
+  describe(".find") do
+    it("Finds word by its id") do
+      word = Word.new({:word => "ocean"})
+      word.save()
+      word2 = Word.new({:word => "seaweed"})
+      word2.save()
+      expect(Word.find(1)).to(eq(word))
+      expect(Word.find(2)).to(eq(word2))
+    end
+  end
 end
