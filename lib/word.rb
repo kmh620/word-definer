@@ -1,3 +1,4 @@
+
 class Word
 
   attr_accessor(:word)
@@ -11,15 +12,6 @@ class Word
   def case_word
     @@list.push(word.downcase.capitalize)
   end
-
-
-
-
-
-
-
-
-
 
 
 end
