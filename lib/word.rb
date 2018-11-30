@@ -15,6 +15,9 @@ class Word
     @@list
   end
 
+  def save()
+   @@list.push(self)
+  end
 
 
   def case_word
