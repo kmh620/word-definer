@@ -9,13 +9,13 @@ describe("Word") do
     end
 
   describe('.all') do
-    it('Shows list array empty') do
+    it('Shows dictionary array empty') do
       expect(Word.all()).to(eq([]))
     end
   end
 
   describe('#save') do
-    it('Saves word to list') do
+    it('Saves word to dictionary') do
       word = Word.new("water")
       word.save()
       expect(Word.all()).to(eq([word]))
@@ -23,7 +23,7 @@ describe("Word") do
   end
 
   describe('.clear') do
-    it('Clears all words from list') do
+    it('Clears all words from dictionary') do
       word = Word.new("tree")
       word.save()
       Word.clear()

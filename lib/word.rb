@@ -4,24 +4,24 @@ class Word
   attr_accessor(:word)
   attr_reader(:id)
 
-  @@list = []
+  @@dictionary = []
 
   def initialize(word)
     @word = word
-    @id = @@list.length + 1
+    @id = @@dictionary.length + 1
   end
 
   def self.all()
-    @@list
+    @@dictionary
   end
 
   def self.clear()
-    @@list = []
+    @@dictionary = []
   end
 
 
   def save()
-   @@list.push(self)
+   @@dictionary.push(self)
   end
 
 

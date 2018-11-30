@@ -1,0 +1,16 @@
+<h1>Dictionary</h1>
+
+<p>Click on a word to view/ add a definition</p>
+
+<% @dictionary.each do |word| %>
+  <h3 font= "bold"><%= word %></h3>
+<% end %>
+
+
+<form action="/add" method="post">
+  <div class="form-group">
+    <label for="input_word">Add a word to the dictionary:</label>
+    <input id="input_word" name="input_word" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn btn-default">Add</button>
+</form>
