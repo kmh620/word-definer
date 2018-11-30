@@ -1,14 +1,8 @@
-<h2> <%= new_word.word %> </h2>
-
- <!-- <% if @dictionary.definition %> -->
-
-<h3> <%= new_word.definition %> </h3>
-<br>
-
-<!-- # <% end %> -->
+<h2> <%= @new_word.word %> </h2>
 
 
-<form action="/add_definition" method="post">
+
+<form action="/definition" method="get">
   <div class="form-group">
     <label for="input-definition">Add a definition:</label>
     <input id="input-definition" name="input-definition" class="form-control" type="text">

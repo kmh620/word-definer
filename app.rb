@@ -20,11 +20,17 @@ post('/add_word') do
   erb(:dictionary)
 end
 
-get('/add_definition') do
+get('/dictionary/:id') do
+  @new_word = Word.find(params[:id])
   erb(:definition)
 end
 
-post('/add_definition') do
-  @word_def = params.fetch("input-definition")
-  
+get('/definition/:id') do
+  @new_word = Word.find(params[:id])
+  erb(:definition)
 end
+#
+# post('/definition') do
+#   @word_def = params.fetch("input-definition")
+#
+# end
