@@ -29,8 +29,18 @@ get('/definition/:id') do
   @new_word = Word.find(params[:id])
   erb(:definition)
 end
-#
-# post('/definition') do
-#   @word_def = params.fetch("input-definition")
-#
-# end
+
+get('/definition/:definition') do
+  @new_word = Word.find(params[:definition])
+  erb(:definition)
+end
+
+
+post('/definition/:id') do
+  @word_def = params.fetch("input-definition")
+  new_def = Word.define({:definition => @word_def})
+  new_def.save()
+  @dictionary = Word.all()
+  erb(:definition)
+
+end

@@ -32,4 +32,11 @@ class Word
      end
    end
  end
+
+ def define(word_define)
+   @definition = word_define
+ end
+
+
+
 end
