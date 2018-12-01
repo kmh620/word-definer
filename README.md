@@ -9,7 +9,7 @@
 
 ### Setup/Installation
 
-*_ Go to [Heroku link  link](https://evening-everglades-58431.herokuapp.com/)
+*_ Go to [Heroku](https://evening-everglades-58431.herokuapp.com/)
 * _Log in to GitHub_
 * _Clone GitHub URL in terminal_
 * _Open file in Atom_
