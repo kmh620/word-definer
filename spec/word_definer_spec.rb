@@ -52,4 +52,13 @@ describe("Word") do
       expect(Word.find(2)).to(eq(word2))
     end
   end
+
+  describe('.add_define') do
+    it('Adds definition to word') do
+      word = Word.new({:word => "tree"})
+      word.save()
+      Word.define({:definition => "Big and Tall"})
+      expect(word.definition()).to(eq("Big and Tall"))
+    end
+  end
 end

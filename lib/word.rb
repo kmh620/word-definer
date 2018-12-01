@@ -33,10 +33,17 @@ class Word
    end
  end
 
- def define(word_define)
+ def self.define(word_define)
    @definition = word_define
  end
 
+ def self.add_define(word_define)
+   @@dictionary.each do |word, definition|
+     if definition == false
+       @@dictionary[i].define(word_define)
+     end
+   end
 
+end
 
 end
