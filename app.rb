@@ -41,6 +41,6 @@ post('/definition/:id') do
   new_def = Word.define({:definition => @word_def})
   new_def.save()
   @dictionary = Word.all()
-  erb(:definition)
+  erb(:dictionary)
 
 end

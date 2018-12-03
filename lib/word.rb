@@ -1,14 +1,15 @@
 
 class Word
 
-  attr_accessor(:word, :definition)
+  attr_accessor(:word)
   attr_reader(:id)
 
   @@dictionary = []
+  @@definition = []
 
   def initialize(attributes)
     @word = attributes.fetch(:word).downcase.capitalize
-    @definition = false
+    # @definition = []
     @id = @@dictionary.length + 1
   end
 
@@ -37,13 +38,14 @@ class Word
    @definition = word_define
  end
 
- def self.add_define(word_define)
-   @@dictionary.each do |word, definition|
-     if definition == false
-       @@dictionary[i].define(word_define)
-     end
-   end
+ def self.add_define(define_word)
 
-end
+   @@dictionary.each do |word|
+     define_word.fetch(:definition).downcase.capitalize
+     @definition.push(define_word)
+
+    end
+
+ end
 
 end

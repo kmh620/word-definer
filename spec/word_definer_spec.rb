@@ -57,7 +57,7 @@ describe("Word") do
     it('Adds definition to word') do
       word = Word.new({:word => "tree"})
       word.save()
-      Word.define({:definition => "Big and Tall"})
+      Word.add_define({:definition => "Big and Tall"})
       expect(word.definition()).to(eq("Big and Tall"))
     end
   end
