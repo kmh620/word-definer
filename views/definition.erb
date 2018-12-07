@@ -1,11 +1,13 @@
+
 <h2> <%= @new_word.word %> </h2>
 
+<form action="/definition/<%= @new_word.id %>"
 
+  <br>
+  <h3> <%= @new_word.define %> </h3>
+  <br>
 
-<h3> <%= @new_word.definition %> </h3>
-<br>
-
-
+</form>
 
 <form action="/definition" method="get">
   <div class="form-group">

@@ -2,14 +2,14 @@
 class Word
 
   attr_accessor(:word)
-  attr_reader(:id)
+  attr_reader(:id, :definition)
+
 
   @@dictionary = []
-  @@definition = []
 
   def initialize(attributes)
-    @word = attributes.fetch(:word).downcase.capitalize
-    # @definition = []
+    @word = attributes.fetch(:word).capitalize
+    @definition = attributes.fetch(:definition).capitalize
     @id = @@dictionary.length + 1
   end
 
@@ -34,18 +34,29 @@ class Word
    end
  end
 
- def self.define(word_define)
-   @definition = word_define
+
+
+
+
+ def self.define(word)
+   new_word =
+   definitions = []
+    new_word
+   define_word.fetch(:definition).downcase.capitalize
+   definitions.push(define)
+
+   definitions
  end
 
- def self.add_define(define_word)
-
-   @@dictionary.each do |word|
-     define_word.fetch(:definition).downcase.capitalize
-     @definition.push(define_word)
-
-    end
-
- end
+ #
+ # def self.add_define(define_word)
+ #
+ #   @@dictionary.each do |word|
+ #     define_word.fetch(:definition).downcase.capitalize
+ #     @definition.push(define_word)
+ #
+ #    end
+ #
+ # end
 
 end

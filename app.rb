@@ -42,5 +42,8 @@ post('/definition/:id') do
   new_def.save()
   @dictionary = Word.all()
   erb(:dictionary)
+end
 
+post('/definition/new_word.id') do
+  
 end
