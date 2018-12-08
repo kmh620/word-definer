@@ -53,12 +53,15 @@ describe("Word") do
     end
   end
 
-  describe('.add_define') do
-    it('Adds definition to word') do
-      word = Word.new({:word => "tree"})
+  describe('#add_definition') do
+    it("Adds a definition to a word") do
+      word = Word.new({:word => "Bark"})
       word.save()
-      Word.add_define({:definition => "Big and Tall"})
-      expect(word.definition()).to(eq("Big and Tall"))
+      new_definition = word.add_definition("dog sound")
+      expect(word.definitions()).to(eq(new_definition))
+
+
     end
   end
+
 end
