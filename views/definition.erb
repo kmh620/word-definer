@@ -1,20 +1,12 @@
 
 <h2> <%= @new_word.word %> </h2>
 
-<form action= "/definition/<%= @new_word.id %>"
 
-  <% @new_word.definitions.each do |definition| %>
-    <br>
-    <h3> <%= @new_word.add_definition%> </h3>
-    <br>
-  <% end %>
 
-</form>
-
-<form action="/definition" method="get">
+<form action="/add_definition/<%= @new_word.id %>" method="post">
   <div class="form-group">
     <label for="input-definition">Add a definition:</label>
     <input id="input-definition" name="input-definition" class="form-control" type="text">
   </div>
-  <button type="submit" class="btn btn-default">Add</button>
+  <button type="submit" class="btn btn-default">Add Definition</button>
 </form>

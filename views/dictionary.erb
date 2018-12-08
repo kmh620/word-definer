@@ -2,15 +2,13 @@
 
 <p>Click on a word to view/ add a definition</p>
 
+<% if @dictionary.any?() %>
 <% @dictionary.each do |new_word| %>
-  <a href= "/definition/<%= new_word.id() %>"><%= new_word.word() %></a>
-<% end %>
-
-
-<form action="/add_word" method="post">
-  <div class="form-group">
-    <label for="input-word">Add a word to the dictionary:</label>
-    <input id="input-word" name="input-word" class="form-control" type="text">
-  </div>
-  <button type="submit" class="btn btn-default">Add</button>
-</form>
+  <ul>
+  <li><a href= "/definition/<%= new_word.id() %>"><%= new_word.word() %></a>
+  </li>
+  <% end %>
+  </ul>
+  <% else %>
+  <p>There are no words yet</p>
+  <% end %>
