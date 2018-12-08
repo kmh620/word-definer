@@ -1,11 +1,13 @@
 
 <h2> <%= @new_word.word %> </h2>
 
-<form action="/definition/<%= @new_word.id %>"
+<form action= "/definition/<%= @new_word.id %>"
 
-  <br>
-  <h3> <%= @new_word.define %> </h3>
-  <br>
+  <% @new_word.definitions.each do |definition| %>
+    <br>
+    <h3> <%= @new_word.add_definition%> </h3>
+    <br>
+  <% end %>
 
 </form>
 
