@@ -21,7 +21,6 @@ class Word
    end
  end
 
-
   def self.all()
     @@dictionary
   end

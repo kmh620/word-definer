@@ -1,7 +1,7 @@
 
 <h2> <%= @new_word.word %> </h2>
 
-<form action="/add_definition/<%= @new_word.id %>" method="post">
+<form action="/add_definition/<%= @new_word.id %>/definition" method="post">
   <div class="form-group">
     <label for="input-definition">Add a definition:</label>
     <input id="input-definition" name="input-definition" class="form-control" type="text">
@@ -9,10 +9,14 @@
   <button type="submit" class="btn btn-default">Add Definition</button>
 </form>
 <br>
-<h5>Definitions:</h5>
-
+<h5>Definition(s)</h5>
+<% if !@definition.to_s.empty? %>
 <ul>
-<% @definitions.each do |new_definition| %>
-    <li> <%= new_definition %> </li>
-<% end %>
-</ul>
+<% @definition.each do |d| %>
+
+  <li><%= "definition" %></li>
+  <% end %>
+  </ul>
+  <% else %>
+  <p>There are no definitions yet</p>
+  <% end %>
