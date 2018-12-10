@@ -1,14 +1,12 @@
 
 <h2> <%= @new_word.word %> </h2>
 
-
-<% if @definitions.any?() %>
-<% @definitions.each do |new_def| %>
-  <ul>
-  <li><a href= "/definition/<%= new_word.id() %>"><%= new_def.definition() %></a>
-  </li>
-  <% end %>
-  </ul>
-  <% else %>
-  <p>There are no definitions yet</p>
-  <% end %>
+<form action="/add_definition/<%= @new_word.id %>" method="post">
+  <div class="form-group">
+    <label for="input-definition">Add a definition:</label>
+    <input id="input-definition" name="input-definition" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn btn-default">Add Definition</button>
+</form>
+<br>
+<h5>Definitions:</h5>

@@ -13,12 +13,3 @@ describe('Adding a word', {:type => :feature}) do
     expect(page).to have_content("Table")
   end
 end
-
-describe('Adding a definition', {:type => :feature}) do
-  it('User adds definition(s) to word') do
-    visit('/')
-    fill_in('definition', :with => 'this is a definition')
-    click_button('Add Definition')
-    expect(page).to have_content("this is a definition")
-  end
-end
