@@ -22,10 +22,6 @@ class Word
  end
 
 
-  def add_definition(definition)
-    @definitions.push(definition)
-  end
-
   def self.all()
     @@dictionary
   end
@@ -36,6 +32,10 @@ class Word
 
   def save()
    @@dictionary.push(self)
+  end
+
+  def add_definition(definition)
+    @definitions.push(definition)
   end
 
 end

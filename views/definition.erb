@@ -10,3 +10,9 @@
 </form>
 <br>
 <h5>Definitions:</h5>
+
+<ul>
+<% @definitions.each do |new_definition| %>
+    <li> <%= new_definition %> </li>
+<% end %>
+</ul>

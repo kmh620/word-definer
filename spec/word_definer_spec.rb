@@ -59,8 +59,14 @@ describe("Word") do
       word.save()
       new_definition = word.add_definition("dog sound")
       expect(word.definitions()).to(eq(new_definition))
+    end
+    it("Adds multiple definitions to a word")do
+    word = Word.new({:word => "Bark"})
+    word.save()
+    new_definition = word.add_definition("dog sound")
+    new_definition2 = word.add_definition("outer layer of tree")
 
-
+    expect(word.definitions()).to(eq(["dog sound","outer layer of tree"]))
     end
   end
 

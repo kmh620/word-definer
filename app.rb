@@ -19,14 +19,21 @@ end
 get("/definition/:id") do
   @word_id = params[:id]
   @new_word = Word.find(params[:id])
-  @definitions = params[:definitions]
   erb(:definition)
+end
+
+get("/add_definition/:id") do
+  @this_word_id = params[:id]
+  @this_word = Word.find(params[:id])
+  @word_definition = params[:definitions]
+  @definitions = Word.definitions
+  redirect("/")
 end
 
 post("/add_definition/:id") do
   new_definition = params.fetch("input-definition")
   @new_word = Word.find(params[:id])
   @new_word.add_definition(new_definition)
-  
+
   redirect("/")
 end
