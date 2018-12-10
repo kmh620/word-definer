@@ -26,17 +26,14 @@ get("/add_definition/:id") do
   @this_word_id = params[:id]
   @this_word = Word.find(params[:id])
   @word_definition = params[:definitions]
-  @definitions = this_word.definitions()
+  @definitions = this_word.definitions
   redirect("/")
 end
 
-post("/add_definition/:id/definition") do
+post("/add_definition/:id") do
   new_definition = params.fetch("input-definition")
-  word_id = params[:id]
-  this_word = Word.find(params[:id])
-  add = this_word.add_definition(new_definition)
-  @definitions = params[:definitions]
-
+  @new_word = Word.find(params[:id])
+  @new_word.add_definition(new_definition)
 
   redirect("/")
 end
