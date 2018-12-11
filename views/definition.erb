@@ -10,3 +10,11 @@
 </form>
 <br>
 <h5>Definition(s)</h5>
+
+<% if @new_word.definitions.any? %>
+  <% @new_word.definitions.each do |definition| %>
+   <p><%= definition %></p>
+
+    <% end %> 
+
+    <% end %>
